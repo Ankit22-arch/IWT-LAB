@@ -1,63 +1,91 @@
-.photo-frame {
-    width: 300px;
-    border: 5px solid blue;
-    margin: 10px;
-    padding: 15px;
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
 }
-.mark-sheet {
-    width: 80%;
-    border-collapse: collapse;
-    margin: 20px auto;
+
+/* --- Task 1 Styles --- */
+.task-section {
+    padding: 40px;
     background-color: white;
+    border-bottom: 2px solid #ddd;
 }
 
-.mark-sheet th, .mark-sheet td {
-    border: 1px solid #333;  
-    padding: 12px;            
-    text-align: center;
-}
-
-.mark-sheet thead tr {
-    background-color: #4CAF50;
-    color: white;
-    font-weight: bold;        
-}
-
-.mark-sheet tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-.profile-card {
-    border: 3px solid #004ba0; /*  Blue */
-    background-color: #ffcc00; /*  Yellow */
-    border-radius: 15px;
-    width: 280px;
-    padding: 25px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    margin: 20px auto;
-}
-
-.profile-card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-
-    border: 3px solid #004ba0;
-}
-
-.profile-card h3 {
-    color: #004ba0;
-    margin: 15px 0 5px;
-}
-
-.profile-card .role {
-    font-weight: bold;
+/* Displaying block-level headings on the same line */
+.inline-headers h1, 
+.inline-headers h2, 
+.inline-headers h3 {
+    display: inline-block;
+    margin-right: 20px;
     color: #333;
 }
 
-.profile-card .stats {
-    margin-top: 15px;
-    font-size: 14px;
-    border-top: 1px solid rgba(0, 75, 160, 0.3);
-    padding-top: 10px;
+/* Displaying inline-level spans on separate lines */
+.block-spans span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #555;
 }
+
+/* --- Task 2 Styles (Login Card) --- */
+.login-wrapper {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    min-height: 80vh;        /* High enough to show centering */
+}
+
+.login-card {
+    background: #ffffff;
+    padding: 40px;
+    width: 350px;
+    border-radius: 12px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	transition: 0.3s;
+    text-align: center;
+}
+
+.form-title {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #222;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box; /* Crucial for width alignment */
+    font-size: 1rem;
+}
+
+.checkbox-container {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #222;
+	font-weight: bold;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #3e8e41;
+}
+
