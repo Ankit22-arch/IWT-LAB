@@ -1,0 +1,27 @@
+<html>
+<head>>
+    <title>Second Largest Element</title>
+</head>
+<body>
+    <h1>
+        The second largest element of the array [56, 7, 1, -1, 25] is: 
+    </h1>
+
+    <script language="JavaScript">
+        let arr = [56, 7, 1, -1, 25];
+        let Maxs = -Infinity;
+        let SecondLargest = -Infinity;
+
+        for(let ele of arr){
+            if(ele > Maxs){
+                SecondLargest = Maxs;
+                Maxs = ele;
+            } else if(ele > SecondLargest && ele != Maxs){
+                SecondLargest = ele;
+            }
+        }
+
+        document.write("second Largest ELement is"+SecondLargest);
+    </script>
+</body>
+</html>

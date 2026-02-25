@@ -1,0 +1,25 @@
+
+<html>
+<head>
+<title>5.3</title>
+<head>
+<script>
+var a=parseInt(prompt("enter a number to check palindrome"));
+var n=a;
+var sum=0;
+while(a!=0)
+{
+	let rem=a%10;
+	sum=sum*10+rem;
+	a=Math.floor(a/10);
+	
+}
+if(sum==n)
+document.write("it is a palindrome number");
+else
+document.write("It is not a pallindrome number");
+</script>
+</head>
+<body>
+</body>
+</html>
