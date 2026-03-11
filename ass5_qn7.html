@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Question 07 - Element Count</title>
+</head>
+<body>
+    <h1>Element Occurrences</h1>
+    <script language="JavaScript">
+        let arr = [5, 2, 5, 1, 2, 5, 8, 1];
+        let counts = {};
+        for (let i = 0; i < arr.length; i++) {
+            let num = arr[i]; 1
+            counts[num] = (counts[num] || 0) + 1;
+        }
+
+        document.write("<p><b>Original Array:</b> [" + arr.join(", ") + "]</p>");
+        document.write("<ul>");
+        for (let key in counts) {
+            document.write("<li>Element <b>" + key + "</b> occurs <b>" + counts[key] + "</b> time(s).</li>");
+        }
+        document.write("</ul>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 11 - Manual Reverse</title>
+</head>
+<body>
+    <h1>Manual Array Reversal</h1>
+    <p>Enter elements into the array: <input type="text" id="revInput"> <button onclick="reverse()">Reverse</button></p>
+    <p id="revOutput"></p>
+
+    <script>
+        function reverse() {
+            let items = document.getElementById("revInput").value.split(',');
+            let reversed = [];
+
+            for (let i = items.length - 1; i >= 0; i--) {
+                reversed.push(items[i].trim());
+            }
+
+            document.getElementById("revOutput").innerHTML = "<b>Reversed array:</b> [" + reversed.join(', ') + "]";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Question_09</title>
+<script>
+    function checkArmstrong(num) {
+        let temp = num;
+        let digits = num.toString().split("");
+        let sum = 0;
+        let power = digits.length;
+
+        for (let digit of digits) {
+            sum += Math.pow(parseInt(digit), power);
+        }
+        return sum === num;
+    }
+    let a = prompt("Enter a number to check Armstrong:");
+    let n = parseInt(a);
+    if (checkArmstrong(n)) {
+        document.write(n + " is an <b>Armstrong number</b>.");
+    } else {
+        document.write(n + " is <b>not</b> an Armstrong number.");
+    }
+</script>
+</head>
+<body></body>
+</html>

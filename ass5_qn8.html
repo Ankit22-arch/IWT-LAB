@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Question 08 - Prime Number Check</title>
+</head>
+<body>
+    <h1>Prime Number Checker</h1>
+    <script language="JavaScript">
+        let a = prompt("Enter a number: ");
+        function isPrime(num) {
+            if (num <= 1) return false; 
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false; 
+                }
+            }
+            return true; 
+        }
+        let result = isPrime(a);
+        document.write("<p>The number <b>" + a + "</b> is prime: <b>" + result + "</b></p>");
+    </script>
+</body>
+</html>

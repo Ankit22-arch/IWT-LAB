@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Question 06 - Remove Duplicates</title>
+</head>
+<body>
+    <h1>Unique Array Elements</h1>
+    <script language="JavaScript">
+        let arr = [10, 20, 10, 30, 40, 20, 50];
+        let uniqueArr = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            if (uniqueArr.indexOf(arr[i]) === -1) {
+                uniqueArr.push(arr[i]);
+            }
+        }
+        document.write("<p><b>Original Array:</b> [" + arr.join(", ") + "]</p>");
+        document.write("<p><b>New Array (No Duplicates):</b> [" + uniqueArr.join(", ") + "]</p>");
+    </script>
+</body>
+</html>
