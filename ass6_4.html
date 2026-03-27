@@ -1,0 +1,21 @@
+<html>
+<body>
+<input type="text" id="counter" value="0" readonly>
+<button onclick="increment()">+</button>
+<button onclick="decrement()">-</button>
+
+<script>
+function increment() {
+  let count = parseInt(document.getElementById("counter").value);
+  document.getElementById("counter").value = count + 1;
+}
+
+function decrement() {
+  let count = parseInt(document.getElementById("counter").value);
+  if (count > 0) {
+    document.getElementById("counter").value = count - 1;
+  }
+}
+</script>
+</body>
+</html>

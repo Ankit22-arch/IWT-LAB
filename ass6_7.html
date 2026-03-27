@@ -1,0 +1,95 @@
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    form { max-width: 400px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+    label { display: block; margin-top: 10px; }
+    input, textarea, select { width: 100%; padding: 8px; margin-top: 5px; }
+    .error { color: red; margin-top: 10px; }
+    button { margin-top: 15px; padding: 10px; width: 100%; }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="regForm" onsubmit="return validateForm()">
+    
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+
+    <label for="mobile">Mobile:</label>
+    <input type="text" id="mobile">
+
+    <label for="address">Address:</label>
+    <textarea id="address"></textarea>
+
+    <label for="country">Country:</label>
+    <select id="country">
+      <option value="">--Select Country--</option>
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+      <option value="Australia">Australia</option>
+    </select>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password">
+
+    <button type="submit">Register</button>
+    <div class="error" id="error"></div>
+  </form>
+
+  <!-- External JS -->
+  <script>
+  function validateForm() {
+  const name = document.getElementById("name").value.trim();
+  const gender = document.querySelector('input[name="gender"]:checked');
+  const mobile = document.getElementById("mobile").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const country = document.getElementById("country").value;
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const errorDiv = document.getElementById("error");
+
+  errorDiv.innerText = "";
+
+  // a. None of the fields should be empty
+  if (!name || !gender || !mobile || !address || !country || !email || !password) {
+    errorDiv.innerText = "All fields are required.";
+    return false;
+  }
+
+  // b. Mobile number should be a 10-digit valid mobile number
+  const mobilePattern = /^[0-9]{10}$/;
+  if (!mobilePattern.test(mobile)) {
+    errorDiv.innerText = "Please enter a valid 10-digit mobile number.";
+    return false;
+  }
+
+  // c. Email should have a valid format
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!emailPattern.test(email)) {
+    errorDiv.innerText = "Please enter a valid email address.";
+    return false;
+  }
+
+  // d. Password length must be between 6-15
+  if (password.length < 6 || password.length > 15) {
+    errorDiv.innerText = "Password length must be between 6 and 15 characters.";
+    return false;
+  }
+
+  alert("Registration successful!");
+  return true;
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<body>
+<form onsubmit="checkPrime(event)">
+  <input type="number" id="numInput" placeholder="Enter a number">
+  <button type="submit">Check</button>
+</form>
+
+<script>
+function checkPrime(event) {
+  event.preventDefault();
+  const num = parseInt(document.getElementById("numInput").value);
+  let isPrime = num > 1;
+
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+
+  alert(isPrime ? num + " is prime" : num + " is not prime");
+}
+</script>
+</body>
+</html>
